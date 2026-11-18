@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Neon Tetris",
+      "type": "shell",
+      "command": "C:/msys64/ucrt64/bin/g++.exe",
+      "args": [
+        "-std=c++20", "-g", "-Wall", "-Wextra",
+        "-I${workspaceFolder}/include",
+        "${workspaceFolder}/src/main.cpp",
+        "${workspaceFolder}/src/Renderer.cpp",
+        "${workspaceFolder}/src/TetrisGame.cpp",
+        "${workspaceFolder}/src/Tetromino.cpp",
+        "-o", "${workspaceFolder}/NeonTetris.exe",
+        "-lsfml-graphics", "-lsfml-window", "-lsfml-system"
+      ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Run Neon Tetris",
+      "type": "shell",
+      "command": "${workspaceFolder}/NeonTetris.exe",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": { "PATH": "C:/msys64/ucrt64/bin;${env:PATH}" }
+      },
+      "dependsOn": "Build Neon Tetris",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+build/
+*.exe
+*.o
+highscore.txt
+.vscode/
