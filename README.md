@@ -1,4 +1,5 @@
 # Neon Tetris
+![Neon Tetris gameplay](assets/screenshot.png)
 
 A Tetris game written in C++20 with SFML 3.
 
